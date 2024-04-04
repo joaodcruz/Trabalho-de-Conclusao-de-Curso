@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+}
+
+.logo-div {
+    color: rgb(56, 167, 167);
+    background-color: transparent;
+    width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+    padding: 1%;
+    font-size: 14px;
+    border-bottom: 1px solid rgb(56, 167, 167);
+}
+
+.menu {
+    display: flex;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 1%;
+    background-color: transparent;
+    height: 75px;
+}
+
+.menu ul {
+    margin-top:1%;
+    display: flex;
+    list-style: none;
+    width: 660px;
+}
+
+.menu button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 17px;
+    text-transform: capitalize;
+    margin-right: 70px;
+    color: rgb(61, 60, 58);
+}
+
+.menu button:hover {
+    color: rgb(56, 167, 167);
+    border-bottom: 1px solid rgb(56, 167, 167);
+    transition: 0.4s;
+}
+
+.menu ul select {
+    margin-top: 3px;
+    cursor: pointer;
+    background-color: transparent;
+    text-transform: capitalize;
+    color: rgb(61, 60, 58);
+}
+
+
+.selecao {
+    width: 275px;
+    margin-left: auto;
+    margin-top: 8px;
+} 
+
+.select-dropdown {
+    margin-top: 1px;
+    font-size: 15px;
+    height: 23px;
+    width: 110px;
+}
+
+.search-btn {
+    width: 80px;
+    height: 27px;
+}
+
+#start {
+    margin-left: 6px;
+}
+
+.container {
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 1200px;
+    height: 600px;
+}
+
+#daterange {
+    font-size: 17px;
+    background-color: transparent;
+    float: right;
+    margin-right: 6px;
+    width: 220px;
+    display: none;
+    text-transform: capitalize;
+    margin-top: 6px;
+}
+
+#mymap {
+    border: 1px solid gainsboro;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+#mychartcanv {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: none;
+}

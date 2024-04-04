@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <title>Monitoramento de Fluxo Hidráulico</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/i18n/jquery-ui-i18n.min.js"></script>
+    <script src="https://kit.fontawesome.com/c333988695.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.js" integrity="sha512-v3ygConQmvH0QehvQa6gSvTE2VdBZ6wkLOlmK7Mcy2mZ0ZF9saNbbk19QeaoTHdWIEiTlWmrwAL4hS8ElnGFbA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<!-- conexeção com o firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script>
+//Credenciais do banco de dados
+    const firebaseConfig = {
+        apiKey: "AIzaSyDjtOrCWUlUJqj9mSmmrgCBOCqpY8T4uGk",
+        authDomain: "hidramonitor.firebaseapp.com",
+        databaseURL: "https://hidramonitor-default-rtdb.firebaseio.com",
+        projectId: "hidramonitor",
+        storageBucket: "hidramonitor.appspot.com",
+        messagingSenderId: "1089143279708",
+        appId: "1:1089143279708:web:c98ee34fead116d7539699",
+        measurementId: "G-5V0PRZ1G7X"
+        };
+        //Inicialização do app Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth()
+        const db = firebase.database();
+</script>
+<body>
+    <header class="header-principal">
+        <div class="logo-div">
+            <h1>Monitoramento Hidráulico em Tempo Real</h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <button class="mapeamento" onclick="showMap()"> <i class="fa-sharp fa-solid fa-earth-americas"></i> mapeamento </button>
+                </li>
+                <li>
+                    <button class="grafico" onclick="showChart()"> <i class="fa-sharp fa-solid fa-chart-line"></i> grafico </button>
+                </li>
+                <li>
+                    <button class="alertas"> <i class="fa-sharp fa-solid fa-triangle-exclamation"></i> alertas </button>
+                </li>
+                <li>
+                    <button class="sobre"> <i class="fa-solid fa-circle-info"></i> sobre </button>
+                </li>
+                
+            </ul>
+            <div id="daterange">
+                <label for="start">Dia:</label>
+                <input type="text" id="start" name="start">
+                <!-- <label for="end">Até:</label>
+                <input type="text" id="end" name="end"> -->
+            </div> 
+            <div class="selecao">
+                <select class="select-dropdown" name="dropdown">
+                    <option> selecionar </option>
+                </select>
+                <button class="search-btn" onclick="MaporChart()"> buscar <i class="fa-solid fa-magnifying-glass"></i> </button>
+            </div>
+        </div>
+    </header>   
+    <div class="container">
+        <div id="mymap"></div>
+        <canvas id="mychartcanv"></canvas>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
