@@ -1,14 +1,42 @@
 [
     {
+        "Latitude": -23.32827,
+        "Longitude": -51.20142,
+        "nome": "CCA"
+    },
+    {
+        "Latitude": -23.3256036,
+        "Longitude": -51.19589,
+        "nome": "CCB"
+    },
+    {
+        "Latitude": -23.3264055,
+        "Longitude": -51.2016262,
+        "nome": "CCE"
+    },
+    {
+        "Latitude": -23.32508,
+        "Longitude": -51.20623,
+        "nome": "CECA"
+    },
+    {
+        "Latitude": -23.326336,
+        "Longitude": -51.20467,
+        "nome": "CESA"
+    },
+    {
+        "Latitude": -23.3250295,
+        "Longitude": -51.20449,
+        "nome": "CLCH"
+    },
+    {
         "Latitude": -23.32666,
         "Longitude": -51.19834,
-        "nome": "CTU",
-        "zoomLevel": 18
+        "nome": "CTU"
     },
     {
         "Latitude": -23.32502,
         "Longitude": -51.20143,
-        "nome": "RU",
-        "zoomLevel": 18
+        "nome": "RU"
     }
 ]

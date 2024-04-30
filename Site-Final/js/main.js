@@ -247,22 +247,6 @@ auth.signInWithEmailAndPassword('joao.victor.cruz@uel.br', 'hidro1234').then((us
                     }
                 }
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
             }
             
             PLOTMAP.lerSetup();
@@ -313,10 +297,7 @@ let mymap = document.getElementById("mymap");
         let select = document.querySelector(".select-dropdown");
         let value = select.options[select.selectedIndex].value;
 
-        map.flyTo(
-        [ourData[value - 1].Latitude, ourData[value - 1].Longitude],
-        ourData[value - 1].zoomLevel
-        );
+        map.flyTo([ourData[value - 1].Latitude, ourData[value - 1].Longitude],18);
     }
 }
 
