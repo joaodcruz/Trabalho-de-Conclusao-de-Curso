@@ -17,7 +17,7 @@ FirebaseJson json;
 FirebaseJson jsonSetup;
 
 
-String nome = "CTU";
+String nome = "NOME";
 int Taxa = 2; //dados enviados para o database por minuto
 float Fluxo = 0;
 int resetTime = millis();
@@ -42,7 +42,7 @@ unsigned long regTime() {
 }
 
 void initWiFi() {
-  WiFi.begin("HUAWEI-2.4G-z33M", "96191048");
+  WiFi.begin("SSID", "SENHA");
   Serial.print("Connecting to WiFi ..");
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print('.');
@@ -78,10 +78,10 @@ void setup() {
   configTime(0, 0, ntpServer);
 
   // Inicialização da conexão com o Firebase
-  config.api_key = "AIzaSyDjtOrCWUlUJqj9mSmmrgCBOCqpY8T4uGk";
-  auth.user.email = "joao.victor.cruz@uel.br";
-  auth.user.password = "hidro1234";
-  config.database_url = "https://hidramonitor-default-rtdb.firebaseio.com/";
+  config.api_key = "CONFIG-API-KEY";
+  auth.user.email = "AUTH-USER-EMAIL";
+  auth.user.password = "AUTH-USER-PASSWORD";
+  config.database_url = "CONFIG-DATABASE-URL";
 
   // Configuração do WiFi
   Firebase.reconnectWiFi(true);
@@ -128,10 +128,8 @@ void loop() {
 
     unsigned long timeStamp = regTime();
 
-    Fluxo = pulso * 0.002 * Taxa;
+    Fluxo = pulso * 0.00207 * Taxa;
     
-    // Obtém a data e hora atual
-    String Horario = timeClient.getFormattedTime();
     
     // Envia dados para Firebase
     if (Fluxo != 0) {
@@ -153,7 +151,6 @@ void loop() {
     }
 
     if (ultimoPulso >= tempoPreSleep * Taxa) {
-    Serial.println(ultimoPulso);
     ultimoPulso = 0;
     sleep();
     delay(200);
