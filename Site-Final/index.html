@@ -29,14 +29,14 @@
 <script>
 //Credenciais do banco de dados
     const firebaseConfig = {
-        apiKey: "API-KEY",
-        authDomain: "AUTH-DOMAIN",
-        databaseURL: "DATABASE-URL",
-        projectId: "PROJECT-ID",
-        storageBucket: "STORAGE-BUCKET",
-        messagingSenderId: "MESSAGING-SENDER-ID",
-        appId: "APP-ID",
-        measurementId: "MEASUREMENT-ID"
+        apiKey: "AIzaSyDjtOrCWUlUJqj9mSmmrgCBOCqpY8T4uGk",
+        authDomain: "hidramonitor.firebaseapp.com",
+        databaseURL: "https://hidramonitor-default-rtdb.firebaseio.com",
+        projectId: "hidramonitor",
+        storageBucket: "hidramonitor.appspot.com",
+        messagingSenderId: "1089143279708",
+        appId: "1:1089143279708:web:c98ee34fead116d7539699",
+        measurementId: "G-5V0PRZ1G7X"
         };
         //Inicialização do app Firebase
         firebase.initializeApp(firebaseConfig);
@@ -60,7 +60,7 @@
                     <button class="alertas"> <i class="fa-sharp fa-solid fa-triangle-exclamation"></i> alertas </button>
                 </li>
                 <li>
-                    <button class="sobre"> <i class="fa-solid fa-circle-info"></i> sobre </button>
+                    <button class="sobre" onclick="showAbout()"> <i class="fa-solid fa-circle-info"></i> sobre </button>
                 </li>
                 
             </ul>
@@ -81,6 +81,21 @@
     <div class="container">
         <div id="mymap"></div>
         <canvas id="mychartcanv"></canvas>
+        <div id="myabout">
+            <br>
+            <br>
+            João Victor Dutra da Cruz
+            <br>
+            <br>
+            Trabalho de Conclusão de Curso orientado pelo Prof. Aziz Elias
+            Demian Junior intitulado “Desenvolvimento de um sistema de IOT
+            autônomo para monitoramento de fluxo hidráulico” e apresentado
+            à Universidade Estadual de Londrina, como parte dos requisitos
+            necessários para a obtenção do Título de Bacharel em Engenharia
+            Elétrica.
+            <br>
+        </div>
+        <div id="myalert"></div>
     </div>
 
     <script src="js/main.js"></script>

@@ -119,3 +119,19 @@ body {
     height: 100%;
     display: none;
 }
+
+#myabout {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: none;
+    text-align: justify;
+    text-indent: 30px;
+}
+
+#myalert {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
